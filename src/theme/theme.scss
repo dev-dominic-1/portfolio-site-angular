@@ -1,8 +1,18 @@
 @use "../../node_modules/@angular/material/index" as mat;
+@use "sass:map";
 @include mat.core();
 @import "./palettes/primary-palette";
 @import "./palettes/accent-palette";
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Sura:wght@400;700&display=swap');
+
+@mixin define-property($prefix: --, $name, $value) {
+  #{$prefix}#{$name}: $value
+}
+
+body {
+  $palette-primary: map.get($md-palette, 900);
+  @include define-property($name: palette-primary, $value: map.get($md-palette, 900))
+}
 
 @include mat.all-component-themes(mat.define-light-theme((
   color: (

@@ -1,7 +1,14 @@
-.app-wrapper {
+#app-wrapper {
   margin: 0;
   height: 100dvh;
   width: 100dvw;
-  padding: 32px;
   background: #EDEDED;
+  &::ng-deep {
+    #route-component-base {
+      padding: 32px;
+    }
+    mat-card.primary-content-card {
+      border-radius: 15px;
+    }
+  }
 }

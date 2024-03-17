@@ -1,3 +1,23 @@
-<div class="wrapper mat-headline-1">
-  CONTENT
+<div id="route-component-base" class="wrapper mat-headline-1">
+  <div class="grid-row">
+    <mat-card class="primary-content-card set-height-300">
+      <mat-card-content>
+        Dominic Hiland
+      </mat-card-content>
+    </mat-card>
+    <div class="profile-contact-container set-height-300">
+      <mat-card class="primary-content-card">
+        <mat-card-content>
+          CONTENT
+        </mat-card-content>
+      </mat-card>
+      <div class="profile-link-container">
+        @for(button of buttons; track button) {
+          <link-button [text]="button.text" [color]="button.color" [iconName]="button.iconName">
+            {{ button.text }}
+          </link-button>
+        }
+      </div>
+    </div>
+  </div>
 </div>

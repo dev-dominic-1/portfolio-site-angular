@@ -79,11 +79,35 @@ $height-width: height, width;
   }
 }
 
+@for $i from 0 through 20 {
+  @each $direction in $height-width {
+    $calc: #{$i * 50px};
+    .max-#{$direction}-#{$i * 50} {
+      max-#{$direction}: $calc;
+    }
+    .min-#{$direction}-#{$i * 50} {
+      min-#{$direction}: $calc;
+    }
+    .set-#{$direction}-#{$i * 50} {
+      min-#{$direction}: $calc;
+      max-#{$direction}: $calc;
+    }
+  }
+}
+
+button.mdc-button {
+  &.large {
+    min-height: 48px;
+  }
+  &.x-large {
+    min-height: 64px;
+  }
+}
+
 @mixin display-grid ($grid-template-columns, $grid-template-rows) {
   display: grid;
   grid-template-columns: $grid-template-columns;
-  grid-template-rows: $grid-template-rows
+  grid-template-rows: $grid-template-rows;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

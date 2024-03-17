@@ -1,0 +1,19 @@
+button.mdc-button {
+  border-radius: 10px;
+  font-size: 24px;
+}
+.wrapper {
+  position: relative;
+  cursor: pointer;
+  & .icon-container {
+    $image-size: 38px;
+    height: $image-size;
+    & img {
+      height: $image-size;
+    }
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(calc(-50%));
+  }
+}
