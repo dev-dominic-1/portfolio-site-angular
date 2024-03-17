@@ -1,1 +1,89 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$protfolio-site-angular-primary: mat.define-palette(mat.$indigo-palette);
+$protfolio-site-angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$protfolio-site-angular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$protfolio-site-angular-theme: mat.define-light-theme((
+  color: (
+    primary: $protfolio-site-angular-primary,
+    accent: $protfolio-site-angular-accent,
+    warn: $protfolio-site-angular-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($protfolio-site-angular-theme);
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+$padding-margin: p, m;
+@for $i from 1 through 16 {
+  @each $pm in $padding-margin {
+    $calc: calc(#{$i} * 4px);
+    .#{$pm}t-#{$i} {
+      padding-top: $calc;
+    }
+    .#{$pm}r-#{$i} {
+      padding-right: $calc;
+    }
+    .#{$pm}b-#{$i} {
+      padding-bottom: $calc;
+    }
+    .#{$pm}l-#{$i} {
+      padding-left: $calc;
+    }
+    .#{$pm}x-#{$i} {
+      padding-left: $calc;
+      padding-right: $calc;
+    }
+    .#{$pm}y-#{$i} {
+      padding-top: $calc;
+      padding-bottom: $calc;
+    }
+    .#{$pm}a-#{$i} {
+      padding: $calc;
+    }
+  }
+}
+
+$height-width: height, width;
+@for $i from 0 through 10 {
+  @each $direction in $height-width {
+    .#{$direction}-#{$i * 10} {
+      #{$direction}: calc(#{$i} * 10%);
+    }
+  }
+}
+
+@mixin display-grid ($grid-template-columns, $grid-template-rows) {
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  grid-template-rows: $grid-template-rows
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
