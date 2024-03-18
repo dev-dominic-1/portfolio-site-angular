@@ -37,8 +37,8 @@
   <mat-card class="primary-content-card mt-8 d-flex">
     <div class="mat-headline-2 my-4 pl-8">Projects</div>
   </mat-card>
-  @for(project of PROJECTS; track project) {
-    <div class="mt-8">
+  @for(project of PROJECTS; track project; let i = $index) {
+    <div [ngClass]="!i ? 'mt-6' : 'mt-8'">
       <project-wrapper
         [headerText]="project.title"
         [frontendLinks]="project.frontendLinks"

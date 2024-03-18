@@ -6,6 +6,7 @@ import LinkButton from "../models/LinkButton";
 import {ProjectWrapperComponent} from "../components/project-wrapper/project-wrapper.component";
 import {PROJECTS} from "../../data/ProjectStore";
 import {COMMON_COLORS} from "../../data/CommonColors";
+import {NgClass} from "@angular/common";
 
 @Component({
   standalone: true,
@@ -17,7 +18,8 @@ import {COMMON_COLORS} from "../../data/CommonColors";
     MatButton,
     LinkButtonComponent,
     ProjectWrapperComponent,
-    MatCardTitle
+    MatCardTitle,
+    NgClass
   ],
   styleUrl: './home.component.scss'
 })
