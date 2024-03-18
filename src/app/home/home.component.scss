@@ -1,20 +1,43 @@
-@import "../../styles";
+@use "../../theme/theme" as theme;
+@use "../../styles" as display;
+
+#this-project-link {
+  background: theme.get-palette-primary(900);
+  & link-button::ng-deep>.wrapper {
+    max-width: 600px;
+    min-width: 250px;
+    margin: auto;
+  }
+}
+
 .grid-row {
-  @include display-grid(1fr 1fr, 1fr);
+  @include display.display-grid(1fr 1fr, 1fr);
   grid-column-gap: 24px;
+}
+
+.profile-contact-container mat-card-content {
+  @include display.display-grid(225px auto, 1fr);
+  grid-column-gap: 24px;
+  &>mat-card {
+    background: grey;
+    box-shadow: 8px 8px 0 theme.get-palette-primary(900);
+    border-radius: 10px;
+  }
 }
 
 .profile-contact-container {
   $content-height: 300px;
   $content-height-secondary: 75px;
   &>*:first-child {
-    min-height: calc($content-height - $content-height-secondary);
+    $calc: calc($content-height - $content-height-secondary);
+    min-height: $calc;
+    height: $calc;
   }
   &>*:last-child {
     height: $content-height-secondary;
   }
   &>.profile-link-container {
-    @include display-grid(1fr 1fr 1fr, 1fr);
+    @include display.display-grid(1fr 1fr 1fr, 1fr);
     grid-column-gap: 12px;
     align-items: end;
     &>button {

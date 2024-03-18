@@ -1,0 +1,16 @@
+<div class="link-stack-wrapper">
+  @for(stack of links; track stack) {
+    <div class="link-stack">
+      @for(button of stack; track button) {
+        <link-button
+          [iconName]="button.iconName"
+          [color]="button.color"
+          [link]="button.link"
+          [disabled]="button.disabled"
+        >
+          {{ button.text }}
+        </link-button>
+      }
+    </div>
+  }
+</div>

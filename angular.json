@@ -91,6 +91,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/theme/theme.scss",
               "src/styles.scss"
             ],
             "scripts": []

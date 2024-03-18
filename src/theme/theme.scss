@@ -5,12 +5,17 @@
 @import "./palettes/accent-palette";
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Sura:wght@400;700&display=swap');
 
+$palette-primary: get-palette-primary(900);
+
+@function get-palette-primary($color: 900) {
+  @return map.get($md-palette, $color)
+}
+
 @mixin define-property($prefix: --, $name, $value) {
   #{$prefix}#{$name}: $value
 }
 
 body {
-  $palette-primary: map.get($md-palette, 900);
   @include define-property($name: palette-primary, $value: map.get($md-palette, 900))
 }
 
@@ -21,14 +26,17 @@ body {
     warn: mat.define-palette(mat.$red-palette)
   )
 )));
+
+$primary-font: 'Sura';
+$secondary-font: 'League Spartan';
 @include mat.all-component-typographies(mat.define-typography-config(
-  $font-family: 'Sura',
-  $headline-1: mat.define-typography-level($font-size: 32px),
-  $headline-2: mat.define-typography-level($font-size: 24px),
-  $headline-3: mat.define-typography-level($font-size: 24px, $font-weight: bold),
-  $body-1: mat.define-typography-level($font-size: 16px, $font-family: 'League Spartan'),
-  $body-2: mat.define-typography-level($font-size: 16px, $font-family: 'Sura'),
-  $subtitle-1: mat.define-typography-level($font-size: 14px, $font-family: 'League Spartan'),
-  $subtitle-2: mat.define-typography-level($font-size: 14px, $font-family: 'League Spartan', $font-weight: bold),
-  $button: mat.define-typography-level($font-size: 16px, $font-weight: 500)
+  $font-family: $primary-font,
+  $headline-1: mat.define-typography-level($font-size: 40px),
+  $headline-2: mat.define-typography-level($font-size: 40px, $font-family: $secondary-font),
+  $headline-3: mat.define-typography-level($font-size: 32px, $font-weight: bold),
+  $body-1: mat.define-typography-level($font-size: 24px, $font-family: $secondary-font),
+  $body-2: mat.define-typography-level($font-size: 24px, $font-family: $primary-font),
+  $subtitle-1: mat.define-typography-level($font-size: 24px, $font-family: $secondary-font),
+  $subtitle-2: mat.define-typography-level($font-size: 24px, $font-family: $secondary-font, $font-weight: bold),
+  $button: mat.define-typography-level($font-size: 24px, $font-weight: 500)
 ));

@@ -1,0 +1,11 @@
+.link-stack-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  &>.link-stack {
+    width: 100%;
+    &>link-button:not(:first-child)::ng-deep>.wrapper {
+      margin-top: 8px;
+    }
+  }
+}

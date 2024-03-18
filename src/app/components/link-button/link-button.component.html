@@ -1,14 +1,16 @@
 <div class="wrapper">
   <button
     mat-raised-button
-    [ngStyle]="{
+    [ngStyle]="disabled ? {} : {
       backgroundColor: color,
       color: textColor,
     }"
+    [ngClass]="{disabled}"
     class="large width-100"
+    [disabled]="disabled"
     (click)="goTo()"
   >
-    {{ text }}
+    <ng-content />
   </button>
   @if(iconName != undefined) {
     <div class="icon-container">

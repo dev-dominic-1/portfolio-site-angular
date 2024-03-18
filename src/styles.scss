@@ -39,6 +39,7 @@ $protfolio-site-angular-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
+  background: #EDEDED;
 }
 
 $padding-margin-map: (
@@ -46,31 +47,31 @@ $padding-margin-map: (
   m: margin
 );
 $padding-margin: p, m;
-@for $i from 1 through 16 {
+@for $i from 0 through 16 {
   @each $pm in $padding-margin {
     $calc: calc(#{$i} * 4px);
     .#{$pm}t-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-top: $calc;
+      #{map.get($padding-margin-map, $pm)}-top: $calc !important;
     }
     .#{$pm}r-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-right: $calc;
+      #{map.get($padding-margin-map, $pm)}-right: $calc !important;
     }
     .#{$pm}b-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-bottom: $calc;
+      #{map.get($padding-margin-map, $pm)}-bottom: $calc !important;
     }
     .#{$pm}l-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-left: $calc;
+      #{map.get($padding-margin-map, $pm)}-left: $calc !important;
     }
     .#{$pm}x-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-left: $calc;
-      #{map.get($padding-margin-map, $pm)}-right: $calc;
+      #{map.get($padding-margin-map, $pm)}-left: $calc !important;
+      #{map.get($padding-margin-map, $pm)}-right: $calc !important;
     }
     .#{$pm}y-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-top: $calc;
-      #{map.get($padding-margin-map, $pm)}-bottom: $calc;
+      #{map.get($padding-margin-map, $pm)}-top: $calc !important;
+      #{map.get($padding-margin-map, $pm)}-bottom: $calc !important;
     }
     .#{$pm}a-#{$i} {
-      #{map.get($padding-margin-map, $pm)}: $calc;
+      #{map.get($padding-margin-map, $pm)}: $calc !important;
     }
   }
 }
@@ -119,6 +120,16 @@ $locations: start, center, end, baseline, space-around, space-between;
         #{$direction}-#{$option}: $loc;
       }
     }
+  }
+}
+
+.font-weight-bold {
+  font-weight: bold !important;
+}
+@for $i from 1 through 10 {
+  $calc: #{$i * 100};
+  .font-weight-#{$calc} {
+    font-weight: $calc !important;
   }
 }
 

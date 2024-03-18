@@ -4,7 +4,9 @@ button.mdc-button {
 }
 .wrapper {
   position: relative;
-  cursor: pointer;
+  &:not(:has(>button[disabled="true"])) {
+    cursor: pointer;
+  }
   & .icon-container {
     $image-size: 38px;
     height: $image-size;

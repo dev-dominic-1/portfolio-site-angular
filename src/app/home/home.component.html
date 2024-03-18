@@ -2,20 +2,28 @@
   <div class="grid-row">
     <mat-card class="primary-content-card set-height-300">
       <mat-card-content class="d-flex flex-column height-100 justify-content-center">
-        <div class="mat-headline-1 mb-4">Dominic Hiland</div>
-        <div class="mat-body-1">A couple of sentences about me.</div>
+        <div class="mat-headline-1 mb-2">Dominic Hiland</div>
+        <div class="mat-body-1 font-weight-500 mb-7">Full Stack Software Engineer</div>
+        <div class="mat-body-1 mb-2">Welcome to my Portfolio Hub!</div>
+        <div class="mat-body-1">
+          I am a passionate and driven Full Stack Software Engineer with an aptitude for finding innovative solutions to
+          complex problems. Cooperative environments that strongly encourage creativity are where I thrive!
+        </div>
       </mat-card-content>
     </mat-card>
     <div class="profile-contact-container set-height-300">
       <mat-card class="primary-content-card">
-        <mat-card-content>
-          CONTENT
+        <mat-card-content class="height-100">
+          <mat-card>IMAGE HERE</mat-card>
+          <div class="d-flex flex-column justify-content-center">
+            <div class="mat-body-1 font-weight-500">Let's get in touch</div>
+            <div class="mat-body-1">{{ 'Email: dominichiland@gmail.com' }}</div>
+          </div>
         </mat-card-content>
       </mat-card>
       <div class="profile-link-container">
         @for(button of buttons; track button) {
           <link-button
-            [text]="button.text"
             [color]="button.color"
             [iconName]="button.iconName"
             [link]="button.link"
@@ -26,4 +34,34 @@
       </div>
     </div>
   </div>
+  <mat-card class="primary-content-card mt-8 d-flex">
+    <div class="mat-headline-2 my-4 pl-8">Projects</div>
+  </mat-card>
+  @for(project of PROJECTS; track project) {
+    <div class="mt-8">
+      <project-wrapper
+        [headerText]="project.title"
+        [frontendLinks]="project.frontendLinks"
+        [backendLinks]="project.backendLinks"
+      />
+    </div>
+  }
+  <mat-card id="this-project-link" class="primary-content-card mt-8">
+    <mat-card-title class="mat-headline-2 mt-8 mb-4 pl-8" style="color: white">
+      Portfolio Site
+    </mat-card-title>
+    <mat-card-content>
+      <mat-card class="link-wrapper">
+        <mat-card-content>
+          <link-button
+            [color]="COMMON_COLORS['GITHUB']"
+            link="www.github.com/dev-dominic-1/portfolio-site-angular"
+            iconName="github-custom.png"
+          >
+            See The Code
+          </link-button>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
 </div>

@@ -1,0 +1,41 @@
+@use "../../../styles" as display;
+@use "../../../theme/theme" as theme;
+.wrapper {
+  background-color: theme.get-palette-primary(900);
+  border-radius: 15px;
+  &>mat-card-content {
+    @include display.display-grid(3fr 4fr, 1fr);
+    grid-column-gap: 24px;
+  }
+  .content-card {
+    height: fit-content;
+    &.large {
+      border-radius: 20px;
+    }
+    &.small {
+      border-radius: 10px;
+    }
+    & .image-carousel {
+      $fixed-height: 270px;
+      min-height: $fixed-height;
+      max-height: $fixed-height;
+      margin: 12px;
+      background: grey;
+      border-radius: 10px;
+    }
+    & link-button {
+      margin: 0 12px 12px 12px;
+    }
+  }
+}
+.link-container {
+  @include display.display-grid(1fr, auto auto);
+  grid-row-gap: 24px;
+  .single {
+    grid-template-rows: 1fr;
+  }
+}
+
+mat-card-content:has(>project-link-wrapper) {
+  margin: auto 0;
+}
