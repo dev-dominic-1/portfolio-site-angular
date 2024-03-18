@@ -13,7 +13,12 @@
       </mat-card>
       <div class="profile-link-container">
         @for(button of buttons; track button) {
-          <link-button [text]="button.text" [color]="button.color" [iconName]="button.iconName">
+          <link-button
+            [text]="button.text"
+            [color]="button.color"
+            [iconName]="button.iconName"
+            [link]="button.link"
+          >
             {{ button.text }}
           </link-button>
         }

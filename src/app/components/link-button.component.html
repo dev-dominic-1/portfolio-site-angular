@@ -1,12 +1,12 @@
 <div class="wrapper">
   <button
-    #btn
     mat-raised-button
     [ngStyle]="{
       backgroundColor: color,
       color: textColor,
     }"
     class="large width-100"
+    (click)="goTo()"
   >
     {{ text }}
   </button>
@@ -15,4 +15,5 @@
       <img [src]="_iconSourceBase + iconName" alt="icon">
     </div>
   }
+  <a href="https://www.google.com" target="_blank" style="display: none"></a>
 </div>
