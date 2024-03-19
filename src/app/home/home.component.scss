@@ -19,9 +19,10 @@
   @include display.display-grid(225px auto, 1fr);
   grid-column-gap: 24px;
   &>mat-card {
-    background: grey;
     box-shadow: 8px 8px 0 theme.get-palette-primary(900);
     border-radius: 10px;
+    background: url("../../assets/dominic-hiland.png");
+    background-size: 100%;
   }
 }
 

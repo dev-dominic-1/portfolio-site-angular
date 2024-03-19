@@ -1,0 +1,27 @@
+<div class="image-carousel">
+  <mat-tab-group [selectedIndex]="carouselIndex">
+    @for(imageName of imageNames; track imageName; let i = $index) {
+      <mat-tab>
+        <img [src]="imageSources[i]" alt="Image">
+      </mat-tab>
+    }
+  </mat-tab-group>
+  <div class="carousel-nav">
+    <button mat-icon-button (click)="setCarouselIndex(carouselIndex - 1, true)">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button mat-icon-button (click)="setCarouselIndex(carouselIndex + 1, true)">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <div class="current-image-indicator">
+      @for(imageName of imageNames ?? []; track imageName; let i = $index) {
+        <mat-icon
+          [ngStyle]="{color: i === carouselIndex ? 'black' : 'grey'}"
+          (click)="setCarouselIndex(i, true)"
+        >
+          circle
+        </mat-icon>
+      }
+    </div>
+  </div>
+</div>

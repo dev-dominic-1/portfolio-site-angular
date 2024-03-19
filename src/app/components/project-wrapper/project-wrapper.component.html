@@ -4,9 +4,10 @@
   </mat-card-title>
   <mat-card-content>
     <mat-card class="large content-card">
-      <div class="image-carousel">
-        IMAGES
-      </div>
+      <image-carousel
+        [imageNames]="imageNames ?? []"
+        fixedHeight="270px"
+      />
       <link-button
         link="www.google.com"
         [color]="primaryColor"

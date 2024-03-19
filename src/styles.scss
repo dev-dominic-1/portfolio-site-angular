@@ -101,6 +101,15 @@ $height-width: height, width;
   }
 }
 
+mat-icon {
+  .x-small {
+    height: 8px;
+  }
+  .small {
+    height: 12px;
+  }
+}
+
 button.mdc-button {
   &.large {
     min-height: 48px;

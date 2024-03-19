@@ -14,7 +14,7 @@
     <div class="profile-contact-container set-height-300">
       <mat-card class="primary-content-card">
         <mat-card-content class="height-100">
-          <mat-card>IMAGE HERE</mat-card>
+          <mat-card></mat-card>
           <div class="d-flex flex-column justify-content-center">
             <div class="mat-body-1 font-weight-500">Let's get in touch</div>
             <div class="mat-body-1">{{ 'Email: dominichiland@gmail.com' }}</div>
@@ -43,6 +43,11 @@
         [headerText]="project.title"
         [frontendLinks]="project.frontendLinks"
         [backendLinks]="project.backendLinks"
+        [imageNames]="[
+          'study-together/study-together-img-1.png',
+          'study-together/study-together-img-1.png',
+          'study-together/study-together-img-1.png'
+        ]"
       />
     </div>
   }

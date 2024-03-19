@@ -15,14 +15,6 @@
     &.small {
       border-radius: 10px;
     }
-    & .image-carousel {
-      $fixed-height: 270px;
-      min-height: $fixed-height;
-      max-height: $fixed-height;
-      margin: 12px;
-      background: grey;
-      border-radius: 10px;
-    }
     & link-button {
       margin: 0 12px 12px 12px;
     }
@@ -39,3 +31,4 @@
 mat-card-content:has(>project-link-wrapper) {
   margin: auto 0;
 }
+

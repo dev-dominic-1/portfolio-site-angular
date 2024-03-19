@@ -1,0 +1,41 @@
+.image-carousel {
+  $fixed-height: 270px;
+  position: relative;
+  min-height: $fixed-height;
+  max-height: $fixed-height;
+  & img {
+    height: $fixed-height;
+  }
+  &::ng-deep .mat-mdc-tab-body-content {
+    display: flex;
+    justify-content: center;
+  }
+  margin: 12px;
+  background: grey;
+  border-radius: 10px;
+  &::ng-deep mat-tab-header {
+    display: none !important;
+  }
+  &>.carousel-nav {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+  }
+  & .current-image-indicator {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    &>mat-icon {
+      cursor: pointer;
+      margin: 0 12px;
+      transform: scale(0.5);
+    }
+  }
+}
