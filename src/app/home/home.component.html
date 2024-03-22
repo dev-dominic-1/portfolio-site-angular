@@ -24,12 +24,11 @@
       <div class="profile-link-container">
         @for(button of buttons; track button) {
           <link-button
+            [text]="button.text"
             [color]="button.color"
             [iconName]="button.iconName"
             [link]="button.link"
-          >
-            {{ button.text }}
-          </link-button>
+          />
         }
       </div>
     </div>
@@ -60,12 +59,11 @@
       <mat-card class="link-wrapper">
         <mat-card-content>
           <link-button
+            text="See The Code"
             [color]="COMMON_COLORS['GITHUB']"
             link="www.github.com/dev-dominic-1/portfolio-site-angular"
             iconName="github-custom.png"
-          >
-            See The Code
-          </link-button>
+          />
         </mat-card-content>
       </mat-card>
     </mat-card-content>

@@ -3,12 +3,26 @@
     <div class="link-stack">
       @for(button of stack; track button) {
         <link-button
+          [text]="button.text"
           [iconName]="button.iconName"
           [color]="button.color"
           [link]="button.link"
           [disabled]="button.disabled"
         >
-          {{ button.text }}
+          <div
+            class="link-button-content"
+            [ngClass]="{'short-content': button.text.length <= 8}"
+          >
+            <div>
+              <img
+                [src]="getSourceImage(button)"
+                [alt]="button.iconName"
+                style="height: 38px"
+              >
+              <div>{{ button.text }}</div>
+              <div></div>
+            </div>
+          </div>
         </link-button>
       }
     </div>

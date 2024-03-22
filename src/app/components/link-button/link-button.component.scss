@@ -1,21 +1,65 @@
+@use "../../../styles" as layout;
+@import "../../../breakpoints.scss";
+
 button.mdc-button {
   border-radius: 10px;
   font-size: 24px;
 }
 .wrapper {
-  position: relative;
-  &:not(:has(>button[disabled="true"])) {
-    cursor: pointer;
+  $image-size: 38px;
+  &::ng-deep .mdc-button__label {
+    width: 100%;
   }
-  & .icon-container {
-    $image-size: 38px;
-    height: $image-size;
-    & img {
-      height: $image-size;
+  &::ng-deep .link-button-content {
+    container-type: inline-size;
+    container-name: button-content-long;
+    &.short-content {
+      container-name: button-content-short;
     }
-    position: absolute;
-    top: 50%;
-    left: 8px;
-    transform: translateY(calc(-50%));
+    &>div:first-child {
+      &>*:first-child {
+        height: 38px;
+        &>img {
+          height: 100%;
+        }
+      }
+      display: grid;
+      grid-template-columns: 38px 1fr 38px;
+    }
   }
+}
+
+@mixin set-grid($grid-template-columns, $hide-icon: 0, $hide-label: 0) {
+  :host::ng-deep .link-button-content>div {
+    grid-template-columns: $grid-template-columns !important;
+    @if($hide-icon != 0) {
+      &>*:is(:first-child,:last-child) {
+        display: none;
+      }
+    } @else if($hide-label != 0) {
+      &>*:first-child {
+        display: block !important;
+        justify-self: center;
+      }
+      &>*:is(:nth-child(2),:last-child) {
+        display: none;
+      }
+    }
+  }
+}
+
+@container button-content-short (width <= 190px) {
+  @include set-grid(1fr, $hide-icon: 1);
+}
+
+@container button-content-short (width <= 140px) {
+  @include set-grid(1fr, $hide-label: 1);
+}
+
+@container button-content-long (width <= 220px) {
+  @include set-grid(1fr, $hide-icon: 1);
+}
+
+@container button-content-long (width <= 140px) {
+  @include set-grid(1fr, $hide-label: 1);
 }
