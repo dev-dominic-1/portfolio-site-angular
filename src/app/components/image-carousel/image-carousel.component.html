@@ -14,14 +14,23 @@
       <mat-icon>navigate_next</mat-icon>
     </button>
     <div class="current-image-indicator">
-      @for(imageName of imageNames ?? []; track imageName; let i = $index) {
+      @for(imageName of imageNames; track imageName; let i = $index) {
         <mat-icon
-          [ngStyle]="{color: i === carouselIndex ? 'black' : 'grey'}"
+          [ngStyle]="{color: i === carouselIndex ? 'black' : 'lightgrey'}"
           (click)="setCarouselIndex(i, true)"
         >
           circle
         </mat-icon>
       }
     </div>
+    @if(imageIconsMap[imageNames[carouselIndex]] != undefined) {
+      <div class="current-image-icon">
+        <img
+          [src]="'assets/' + imageIconsMap[imageNames[carouselIndex]].icon"
+          [alt]="imageIconsMap[imageNames[carouselIndex]].icon"
+          [matTooltip]="imageIconsMap[imageNames[carouselIndex]].tooltip"
+        >
+      </div>
+    }
   </div>
 </div>

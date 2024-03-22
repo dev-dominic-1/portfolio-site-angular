@@ -16,6 +16,7 @@ import {Router} from "@angular/router";
 })
 export class LinkButtonComponent {
 
+  @Input({required: true}) text!: string
   @Input({required: true}) color!: string
   @Input() textColor: string = 'white'
   @Input() iconName?: string
@@ -25,7 +26,6 @@ export class LinkButtonComponent {
   readonly _iconSourceBase: string = 'assets/'
 
   goTo() {
-    console.log('LINK', this.link)
     let a = document.createElement('a')
     a.href = `https://${this.link}`
     a.target = '_blank'

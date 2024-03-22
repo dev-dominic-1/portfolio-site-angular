@@ -10,12 +10,19 @@
     [disabled]="disabled"
     (click)="goTo()"
   >
-    <ng-content />
-  </button>
-  @if(iconName != undefined) {
-    <div class="icon-container">
-      <img [src]="_iconSourceBase + iconName" alt="icon">
+    <div
+      class="link-button-content"
+      [ngClass]="{'short-content': text.length <= 8}"
+    >
+      <div>
+        <div>
+          @if(!!iconName) {
+            <img [src]="'assets/' + iconName" [alt]="iconName">
+          }
+        </div>
+        <div>{{ text }}</div>
+        <div></div>
+      </div>
     </div>
-  }
-  <a href="https://www.google.com" target="_blank" style="display: none"></a>
+  </button>
 </div>

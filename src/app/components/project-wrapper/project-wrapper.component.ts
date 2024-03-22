@@ -9,6 +9,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatRipple} from "@angular/material/core";
 import {NgStyle} from "@angular/common";
 import {ImageCarouselComponent} from "../image-carousel/image-carousel.component";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   standalone: true,
@@ -25,7 +26,8 @@ import {ImageCarouselComponent} from "../image-carousel/image-carousel.component
     MatIcon,
     MatRipple,
     NgStyle,
-    ImageCarouselComponent
+    ImageCarouselComponent,
+    MatTooltip
   ],
   templateUrl: 'project-wrapper.component.html',
   styleUrl: 'project-wrapper.component.scss',

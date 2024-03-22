@@ -42,6 +42,11 @@ body {
   background: #EDEDED;
 }
 
+#app-wrapper {
+  max-width: calc(100dvw - 16px);
+  margin: auto !important;
+}
+
 $padding-margin-map: (
   p: padding,
   m: margin

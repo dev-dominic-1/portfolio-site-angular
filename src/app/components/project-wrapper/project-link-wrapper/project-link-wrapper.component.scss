@@ -1,3 +1,5 @@
+@use "../../../../styles" as layout;
+
 .link-stack-wrapper {
   display: flex;
   gap: 24px;
@@ -9,3 +11,6 @@
     }
   }
 }
+
+
+
