@@ -1,5 +1,8 @@
 @use "../../theme/theme" as theme;
 @use "../../styles" as display;
+@import "../../breakpoints";
+
+
 
 #this-project-link {
   background: theme.get-palette-primary(900);
@@ -10,39 +13,8 @@
   }
 }
 
-.grid-row {
-  @include display.display-grid(1fr 1fr, 1fr);
-  grid-column-gap: 24px;
-}
-
-.profile-contact-container mat-card-content {
-  @include display.display-grid(225px auto, 1fr);
-  grid-column-gap: 24px;
-  &>mat-card {
-    box-shadow: 8px 8px 0 theme.get-palette-primary(900);
-    border-radius: 10px;
-    background: url("../../assets/dominic-hiland.png");
-    background-size: 100%;
-  }
-}
-
-.profile-contact-container {
-  $content-height: 300px;
-  $content-height-secondary: 75px;
-  &>*:first-child {
-    $calc: calc($content-height - $content-height-secondary);
-    min-height: $calc;
-    height: $calc;
-  }
-  &>*:last-child {
-    height: $content-height-secondary;
-  }
-  &>.profile-link-container {
-    @include display.display-grid(1fr 1fr 1fr, 1fr);
-    grid-column-gap: 12px;
-    align-items: end;
-    &>button {
-      border-radius: 10px;
-    }
+@media (width <= $tablet) {
+  #projects-header {
+    margin-top: 20px !important;
   }
 }

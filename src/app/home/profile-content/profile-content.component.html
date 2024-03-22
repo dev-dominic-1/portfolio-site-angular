@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <mat-card class="primary-content-card set-height-300">
+    <mat-card-content class="d-flex flex-column height-100 justify-content-center">
+      <div class="mat-headline-1 mb-2">Dominic Hiland</div>
+      <div class="mat-body-1 font-weight-500 mb-7">Full Stack Software Engineer</div>
+      <div class="mat-body-1 mb-2 font-weight-500">Welcome to my Portfolio Hub!</div>
+      <div class="mat-body-1">
+        I am a passionate and driven Full Stack Software Engineer with an aptitude for finding innovative solutions to
+        complex problems. Cooperative environments that strongly encourage creativity are where I thrive!
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div class="profile-contact-container set-height-300">
+    <mat-card class="primary-content-card">
+      <mat-card-content class="height-100">
+        <mat-card></mat-card>
+        <div class="d-flex flex-column justify-content-center">
+          <div class="mat-body-1 font-weight-500">Let's get in touch</div>
+          <div class="mat-body-1">{{ 'Email: dominichiland@gmail.com' }}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div class="profile-link-container">
+      @for(button of buttons; track button) {
+        <link-button
+          [text]="button.text"
+          [color]="button.color"
+          [iconName]="button.iconName"
+          [link]="button.link"
+        />
+      }
+    </div>
+  </div>
+</div>

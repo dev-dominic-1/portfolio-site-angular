@@ -1,7 +1,8 @@
+@import "../../../breakpoints";
+
 .image-carousel {
   $fixed-height: 270px;
   position: relative;
-  min-width: 505px;
   min-height: $fixed-height;
   max-height: $fixed-height;
   & img {
@@ -57,5 +58,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+}
+
+@media (width <= $mobile) {
+  .image-carousel .current-image-indicator>mat-icon {
+    margin: 0 4px;
   }
 }

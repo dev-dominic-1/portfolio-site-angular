@@ -7,6 +7,7 @@ import {ProjectWrapperComponent} from "../components/project-wrapper/project-wra
 import {PROJECTS} from "../../data/ProjectStore";
 import {COMMON_COLORS} from "../../data/CommonColors";
 import {NgClass} from "@angular/common";
+import {ProfileContentComponent} from "./profile-content/profile-content.component";
 
 @Component({
   standalone: true,
@@ -19,7 +20,8 @@ import {NgClass} from "@angular/common";
     LinkButtonComponent,
     ProjectWrapperComponent,
     MatCardTitle,
-    NgClass
+    NgClass,
+    ProfileContentComponent
   ],
   styleUrl: './home.component.scss'
 })

@@ -1,3 +1,5 @@
+@import "../breakpoints";
+
 #app-wrapper {
   margin: 0;
   height: 100dvh;
@@ -9,5 +11,11 @@
     mat-card.primary-content-card {
       border-radius: 15px;
     }
+  }
+}
+
+@media (width <= $mobile) {
+  #app-wrapper::ng-deep #route-component-base {
+    padding: 12px 0;
   }
 }

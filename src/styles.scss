@@ -43,7 +43,7 @@ body {
 }
 
 #app-wrapper {
-  max-width: calc(100dvw - 16px);
+  max-width: calc(100dvw - 24px);
   margin: auto !important;
 }
 
@@ -77,6 +77,22 @@ $padding-margin: p, m;
     }
     .#{$pm}a-#{$i} {
       #{map.get($padding-margin-map, $pm)}: $calc !important;
+    }
+  }
+}
+
+$overflow-dir: x, y, a;
+$overflow-opt: hidden, scroll, auto;
+@each $dir in $overflow-dir {
+  @each $opt in $overflow-opt {
+    @if($dir == a) {
+      .overflow-#{$opt} {
+        overflow: $opt;
+      }
+    } @else {
+      .overflow-#{$dir}-#{$opt} {
+        overflow-#{$dir}: $opt;
+      }
     }
   }
 }

@@ -1,0 +1,81 @@
+@use "../../../styles" as layout;
+@use "../../../theme/theme" as theme;
+@import "../../../breakpoints";
+
+.wrapper {
+  @include layout.display-grid(1fr 1fr, 1fr);
+  grid-column-gap: 24px;
+}
+
+.profile-contact-container mat-card-content {
+  @include layout.display-grid(225px auto, 1fr);
+  grid-column-gap: 24px;
+  &>mat-card {
+    box-shadow: 8px 8px 0 theme.get-palette-primary(900);
+    border-radius: 10px;
+    background: url("../../../assets/dominic-hiland.png");
+    background-size: 100%;
+  }
+}
+
+.profile-contact-container {
+  $content-height: 300px;
+  $content-height-secondary: 75px;
+  &>*:first-child {
+    $calc: calc($content-height - $content-height-secondary);
+    min-height: $calc;
+    height: $calc;
+  }
+  &>*:last-child {
+    height: $content-height-secondary;
+  }
+  &>.profile-link-container {
+    @include layout.display-grid(1fr 1fr 1fr, 1fr);
+    grid-column-gap: 12px;
+    align-items: end;
+    &>button {
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (width <= $tablet) {
+  .wrapper {
+    @include layout.display-grid(1fr, 1fr 1fr);
+    grid-row-gap: 16px;
+    & .profile-contact-container {
+      min-height: 280px !important;
+      max-height: 280px !important;
+    }
+    & .profile-link-container {
+      align-items: center;
+    }
+  }
+}
+
+@media (width <= $mobile) {
+  .wrapper {
+    &>mat-card:first-child {
+      min-height: fit-content;
+      max-height: fit-content;
+    }
+    & .profile-contact-container {
+      min-height: fit-content !important;
+      max-height: fit-content !important;
+      &>*:first-child {
+        height: fit-content;
+        margin-bottom: 12px;
+      }
+      & mat-card-content {
+        height: fit-content;
+        $image-size: 150px;
+        @include layout.display-grid(1fr, calc($image-size - 10px) auto);
+        grid-row-gap: 12px;
+        &>*:first-child {
+          width: $image-size;
+          justify-self: center;
+        }
+      }
+    }
+  }
+}

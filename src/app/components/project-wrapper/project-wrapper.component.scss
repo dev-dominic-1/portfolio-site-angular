@@ -1,5 +1,8 @@
 @use "../../../styles" as display;
 @use "../../../theme/theme" as theme;
+@import "../../../breakpoints";
+
+
 .wrapper {
   background-color: theme.get-palette-primary(900);
   border-radius: 15px;
@@ -32,3 +35,9 @@ mat-card-content:has(>project-link-wrapper) {
   margin: auto 0;
 }
 
+@media (width <= $compact-desktop) {
+  .wrapper>mat-card-content {
+    @include display.display-grid(1fr, 1fr 1fr);
+    grid-row-gap: 24px;
+  }
+}
