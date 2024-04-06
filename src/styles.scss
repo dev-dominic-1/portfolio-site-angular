@@ -9,7 +9,6 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -55,6 +54,17 @@ $padding-margin: p, m;
 @for $i from 0 through 16 {
   @each $pm in $padding-margin {
     $calc: calc(#{$i} * 4px);
+    .#{$pm}a-#{$i} {
+      #{map.get($padding-margin-map, $pm)}: $calc !important;
+    }
+    .#{$pm}x-#{$i} {
+      #{map.get($padding-margin-map, $pm)}-left: $calc !important;
+      #{map.get($padding-margin-map, $pm)}-right: $calc !important;
+    }
+    .#{$pm}y-#{$i} {
+      #{map.get($padding-margin-map, $pm)}-top: $calc !important;
+      #{map.get($padding-margin-map, $pm)}-bottom: $calc !important;
+    }
     .#{$pm}t-#{$i} {
       #{map.get($padding-margin-map, $pm)}-top: $calc !important;
     }
@@ -66,17 +76,6 @@ $padding-margin: p, m;
     }
     .#{$pm}l-#{$i} {
       #{map.get($padding-margin-map, $pm)}-left: $calc !important;
-    }
-    .#{$pm}x-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-left: $calc !important;
-      #{map.get($padding-margin-map, $pm)}-right: $calc !important;
-    }
-    .#{$pm}y-#{$i} {
-      #{map.get($padding-margin-map, $pm)}-top: $calc !important;
-      #{map.get($padding-margin-map, $pm)}-bottom: $calc !important;
-    }
-    .#{$pm}a-#{$i} {
-      #{map.get($padding-margin-map, $pm)}: $calc !important;
     }
   }
 }

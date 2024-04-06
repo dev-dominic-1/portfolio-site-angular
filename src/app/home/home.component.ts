@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {AfterViewChecked, AfterViewInit, Component, OnInit} from "@angular/core";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {LinkButtonComponent} from "../components/link-button/link-button.component";
@@ -35,7 +35,6 @@ export class HomeComponent {
     new LinkButton('Resume', this.primaryColor, 'www.dropbox.com/scl/fi/0im7df2z1c59wmeghfnjb/Resume-02-16-2024.pdf?rlkey=6s1etfrz11neihwrj0vorpt8w&dl=0', 'file-document-custom.png'),
   ]
 
-  protected readonly Object = Object;
   protected readonly PROJECTS = PROJECTS;
   protected readonly COMMON_COLORS = COMMON_COLORS;
 }

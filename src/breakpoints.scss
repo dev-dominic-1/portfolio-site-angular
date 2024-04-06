@@ -1,3 +1,22 @@
 $compact-desktop: 1500px;
 $tablet: 1068px;
 $mobile: 610px;
+
+body {
+  --current-breakpoint: desktop
+}
+@media (width <= $compact-desktop) {
+  body {
+    --current-breakpoint: compact-desktop;
+  }
+}
+@media (width <= $tablet) {
+  body {
+    --current-breakpoint: tablet;
+  }
+}
+@media (width <= $mobile) {
+  body {
+    --current-breakpoint: mobile;
+  }
+}

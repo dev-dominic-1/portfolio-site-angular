@@ -1,11 +1,50 @@
 @use "../../../styles" as layout;
 @import "../../../breakpoints.scss";
 
+.status-report-button-container:has(#status-report-onboarding-container:not(.onboarding-hidden)) {
+  position: relative;
+  &>#status-report-onboarding-container {
+    cursor: default !important;
+    color: white;
+    font-family: "Roboto", serif;
+    padding: 0 4px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    &>*:is(span, mat-icon) {
+      font-size: 14px;
+      line-height: 14px;
+      &:is(mat-icon) {
+        transform: translate(7px, 7px);
+      }
+    }
+    display: flex;
+    align-items: center;
+    position: absolute;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    transform: translate(calc(-100% + 38px), calc(-100% - 4px));
+    background: rgba(grey, 1);
+    border-radius: 4px;
+  }
+}
+
 button.mdc-button {
   border-radius: 10px;
   font-size: 24px;
 }
 .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 8px;
+  & button>mat-icon {
+    $icon-size: 40px;
+    height: $icon-size;
+    width: $icon-size;
+    font-size: $icon-size;
+    transform: translate(-8px, -8px); // Return to center locally within context of `button`
+  }
   $image-size: 38px;
   &::ng-deep .mdc-button__label {
     width: 100%;
@@ -56,7 +95,7 @@ button.mdc-button {
   @include set-grid(1fr, $hide-label: 1);
 }
 
-@container button-content-long (width <= 220px) {
+@container button-content-long (width <= 250px) {
   @include set-grid(1fr, $hide-icon: 1);
 }
 

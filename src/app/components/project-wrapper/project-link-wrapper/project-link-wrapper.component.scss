@@ -1,4 +1,5 @@
 @use "../../../../styles" as layout;
+@import "../../../../breakpoints";
 
 .link-stack-wrapper {
   display: flex;
@@ -8,6 +9,21 @@
     width: 100%;
     &>link-button:not(:first-child)::ng-deep>.wrapper {
       margin-top: 8px;
+    }
+  }
+}
+
+@media (width <= $mobile) {
+  .link-stack-wrapper {
+    flex-direction: column;
+    &>.link-stack:not(.single-stack) {
+      display: grid;
+      grid-template-columns: 1fr calc(50% - 30px);
+      grid-column-gap: 8px;
+      &::ng-deep link-button:last-child>.wrapper {
+        display: flex;
+        margin-top: 0 !important;
+      }
     }
   }
 }

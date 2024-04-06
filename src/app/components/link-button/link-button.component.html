@@ -25,4 +25,17 @@
       </div>
     </div>
   </button>
+  @if(!!status) {
+    <div class="status-report-button-container">
+      @if(showOnboarding) {
+        <div id="status-report-onboarding-container" (click)="hideOnboarding()">
+          <span>See Status Report</span>
+          <mat-icon>arrow_downward</mat-icon>
+        </div>
+      }
+      <button #statusReportButton mat-icon-button class="status-report-button" (click)="openStatusReport()">
+        <mat-icon>info_outline</mat-icon>
+      </button>
+    </div>
+  }
 </div>

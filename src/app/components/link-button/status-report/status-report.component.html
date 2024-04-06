@@ -1,0 +1,40 @@
+<mat-dialog-content class="pt-3 px-3 pb-0">
+  <div class="header mat-headline-2 mb-0">
+    <span>Status Report - <span class="italic">{{ status.name }}</span></span>
+    <div class="live-container mat-body-1">
+      <mat-icon class="x-small" [ngClass]="{live: status.live}">circle</mat-icon>
+      {{ status.live ? 'Live' : 'Not Live' }}
+    </div>
+  </div>
+  <div class="progress-container">
+    <div class="progress-line" [ngClass]="getIconData(status.desktop)[CLASS_NAME_INDEX]">
+      <mat-icon>computer</mat-icon>
+      <span class="mat-body-1 mb-0">Desktop</span>
+      <mat-icon [matTooltip]="getIconData(status.desktop)[TOOLTIP_TEXT_INDEX]" matTooltipShowDelay="200">
+        {{ getIconData(status.desktop)[ICON_NAME_INDEX] }}
+      </mat-icon>
+    </div>
+    <div class="progress-line" [ngClass]="getIconData(status.tablet)[CLASS_NAME_INDEX]">
+      <mat-icon>tablet_mac</mat-icon>
+      <span class="mat-body-1 mb-0">Tablet</span>
+      <mat-icon [matTooltip]="getIconData(status.tablet)[TOOLTIP_TEXT_INDEX]" matTooltipShowDelay="200">
+        {{ getIconData(status.tablet)[ICON_NAME_INDEX] }}
+      </mat-icon>
+    </div>
+    <div class="progress-line" [ngClass]="getIconData(status.mobile)[CLASS_NAME_INDEX]">
+      <mat-icon>phone_iphone</mat-icon>
+      <span class="mat-body-1 mb-0">Mobile</span>
+      <mat-icon [matTooltip]="getIconData(status.mobile)[TOOLTIP_TEXT_INDEX]" matTooltipShowDelay="200">
+        {{ getIconData(status.mobile)[ICON_NAME_INDEX] }}
+      </mat-icon>
+    </div>
+  </div>
+  <mat-card-actions>
+    <button mat-button class="large" (click)="onClickClose.emit()">
+      Close
+    </button>
+    <button mat-button class="large" color="primary" (click)="onClickOpen.emit()">
+      Go To App
+    </button>
+  </mat-card-actions>
+</mat-dialog-content>

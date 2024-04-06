@@ -1,6 +1,6 @@
 <div class="link-stack-wrapper">
   @for(stack of links; track stack) {
-    <div class="link-stack">
+    <div class="link-stack" [ngClass]="{'single-stack': stack.length <= 1}">
       @for(button of stack; track button) {
         <link-button
           [text]="button.text"
@@ -8,6 +8,7 @@
           [color]="button.color"
           [link]="button.link"
           [disabled]="button.disabled"
+          [status]="button.status"
         >
           <div
             class="link-button-content"
