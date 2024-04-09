@@ -29,6 +29,23 @@ export const PROJECTS: {
       ],
       [
         new LinkButton(
+          'React',
+          COMMON_COLORS['REACT'],
+          'study-together-react.netlify.app',
+          'react-custom.png',
+          false,
+          new Status(
+            'Study Together (React)',
+            true,
+            CurrentProgress.COMPLETED,
+            CurrentProgress.WORK_IN_PROGRESS,
+            CurrentProgress.WORK_IN_PROGRESS
+          )
+        ),
+        new LinkButton('Repository', COMMON_COLORS['GITHUB'], 'github.com/dev-dominic-1/study-together-react', 'github-custom.png'),
+      ],
+      [
+        new LinkButton(
           'Vue',
           COMMON_COLORS['VUE'],
           'study-together-vue.netlify.app',
@@ -44,23 +61,6 @@ export const PROJECTS: {
         ),
         new LinkButton('Repository', COMMON_COLORS['GITHUB'], 'www.github.com/dev-dominic-1/study-together-vue', 'github-custom.png'),
       ],
-      [
-        new LinkButton(
-          'React',
-          COMMON_COLORS['REACT'],
-          'study-together-react.netlify.app',
-          'react-custom.png',
-          false,
-          new Status(
-            'Study Together (React)',
-            true,
-            CurrentProgress.WORK_IN_PROGRESS,
-            CurrentProgress.NOT_STARTED,
-            CurrentProgress.NOT_STARTED
-          )
-        ),
-        new LinkButton('Repository', COMMON_COLORS['GITHUB'], 'github.com/dev-dominic-1/study-together-react', 'github-custom.png'),
-      ]
     ],
     backendLinks: [
       [
