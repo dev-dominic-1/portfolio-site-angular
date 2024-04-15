@@ -6,10 +6,12 @@
     <mat-card class="large content-card width-100 overflow-hidden">
       <image-carousel
         [imageNames]="imageNames ?? []"
+        [imageDirectory]="imageDirectory ?? ''"
         fixedHeight="270px"
       />
       <link-button
         text="See More"
+        [disabled]="!!disableSeeMore"
         link="master--study-together-universal-descriptor.netlify.app/"
         [color]="primaryColor"
       />

@@ -33,7 +33,7 @@
     <button mat-button class="large" (click)="onClickClose.emit()">
       Close
     </button>
-    <button mat-button class="large" color="primary" (click)="onClickOpen.emit()">
+    <button mat-button class="large" color="primary" [disabled]="!status.live" (click)="onClickOpen.emit()">
       Go To App
     </button>
   </mat-card-actions>

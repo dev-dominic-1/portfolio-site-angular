@@ -23,6 +23,7 @@ export class ImageCarouselComponent implements OnInit, OnDestroy {
 
   @Input() fixedHeight?: string
   @Input({required: true}) imageNames!: string[]
+  @Input({ required: true }) imageDirectory!: string
   imageSources!: string[]
 
   imageIconsMap: {[key: string]: {icon: string, tooltip: string}} = {

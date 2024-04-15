@@ -9,12 +9,9 @@
         [headerText]="project.title"
         [frontendLinks]="project.frontendLinks"
         [backendLinks]="project.backendLinks"
-        [imageNames]="[
-          'study-together/study-together-img-1.png',
-          'study-together/study-together-img-1-tablet.png',
-          'study-together/study-together-img-1-mobile.png',
-          'study-together/study-together-img-2.png',
-        ]"
+        [imageNames]="project.imageNames"
+        [imageDirectory]="project.imageDirectory"
+        [disableSeeMore]="!!project.disableSeeMore"
       />
     </div>
   }

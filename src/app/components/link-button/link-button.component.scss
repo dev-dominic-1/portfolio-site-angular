@@ -1,6 +1,10 @@
 @use "../../../styles" as layout;
 @import "../../../breakpoints.scss";
 
+.status-report-button-container {
+  height: 40px;
+}
+
 .status-report-button-container:has(#status-report-onboarding-container:not(.onboarding-hidden)) {
   position: relative;
   &>#status-report-onboarding-container {

@@ -4,11 +4,21 @@ import Status, {CurrentProgress} from "../app/models/Status";
 
 export const PROJECTS: {
   title: string,
+  imageNames: string[],
+  imageDirectory: string,
+  disableSeeMore?: boolean,
   frontendLinks?: LinkButton[][],
   backendLinks?: LinkButton[][],
 }[] = [
   {
     title: 'Study Together',
+    imageDirectory: 'study-together',
+    imageNames: [
+      'study-together/study-together-img-1.png',
+      'study-together/study-together-img-1-tablet.png',
+      'study-together/study-together-img-1-mobile.png',
+      'study-together/study-together-img-2.png',
+    ],
     frontendLinks: [
       [
         new LinkButton(
@@ -65,6 +75,53 @@ export const PROJECTS: {
     backendLinks: [
       [
         new LinkButton('.NET', COMMON_COLORS['.NET'], 'www.github.com/dev-dominic-1/study_together_api', 'dot-net-custom.png')
+      ]
+    ]
+  },
+  {
+    title: 'The Expert App',
+    imageDirectory: 'the-expert-app',
+    imageNames: [
+      'the-expert-app/The_Expert_App_1.jpg',
+      'the-expert-app/The_Expert_App_2.jpg',
+      'the-expert-app/The_Expert_App_3.jpg',
+    ],
+    disableSeeMore: true,
+    frontendLinks: [
+      [
+        new LinkButton(
+          'Web Viewer',
+          COMMON_COLORS['REACT'],
+          'the-expert-app.netlify.app/',
+          'react-custom.png',
+          false,
+          new Status(
+            'The Expert App',
+            true,
+            CurrentProgress.NOT_STARTED,
+            CurrentProgress.WORK_IN_PROGRESS,
+            CurrentProgress.WORK_IN_PROGRESS
+          )
+        ),
+        new LinkButton('Repository', COMMON_COLORS['GITHUB'], 'github.com/dev-dominic-1/expert-app-react-native', 'github-custom.png')
+      ]
+    ],
+    backendLinks: [
+      [
+        new LinkButton(
+          '.NET',
+          COMMON_COLORS['.NET'],
+          'www.google.com',
+          'dot-net-custom.png',
+          true,
+          new Status(
+            'The Expert App (Web API)',
+            false,
+            CurrentProgress.NOT_STARTED,
+            CurrentProgress.NOT_STARTED,
+            CurrentProgress.NOT_STARTED,
+          )
+        )
       ]
     ]
   }

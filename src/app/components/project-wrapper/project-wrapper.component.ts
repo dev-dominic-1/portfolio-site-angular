@@ -36,6 +36,8 @@ export class ProjectWrapperComponent {
 
   @Input({required: true}) headerText!: string
   @Input() imageNames?: string[] | undefined
+  @Input() imageDirectory?: string | undefined
+  @Input() disableSeeMore: boolean = false
   @Input() frontendLinks?: LinkButton[][] | undefined
   @Input() backendLinks?: LinkButton[][] | undefined
 
