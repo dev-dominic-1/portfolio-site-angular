@@ -12,7 +12,10 @@
   >
     <div
       class="link-button-content"
-      [ngClass]="{'short-content': text.length <= 8}"
+      [ngClass]="{
+        'short-content': text.length <= 8,
+        'long-content': text.length <= 15
+      }"
     >
       <div>
         <div>

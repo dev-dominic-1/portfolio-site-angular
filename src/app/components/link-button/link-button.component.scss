@@ -55,9 +55,12 @@ button.mdc-button {
   }
   &::ng-deep .link-button-content {
     container-type: inline-size;
-    container-name: button-content-long;
+    container-name: button-content-xl;
     &.short-content {
       container-name: button-content-short;
+    }
+    &.long-content {
+      container-name: button-content-long;
     }
     &>div:first-child {
       &>*:first-child {
@@ -104,5 +107,13 @@ button.mdc-button {
 }
 
 @container button-content-long (width <= 140px) {
+  @include set-grid(1fr, $hide-label: 1);
+}
+
+@container button-content-xl (width <= 500px) {
+  @include set-grid(1fr, $hide-icon: 1);
+}
+
+@container button-content-xl (width <= 410px) {
   @include set-grid(1fr, $hide-label: 1);
 }

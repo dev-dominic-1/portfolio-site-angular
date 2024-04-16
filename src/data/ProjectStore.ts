@@ -90,7 +90,7 @@ export const PROJECTS: {
     frontendLinks: [
       [
         new LinkButton(
-          'Web Viewer',
+          'React Native (Web Viewer)',
           COMMON_COLORS['REACT'],
           'the-expert-app.netlify.app/',
           'react-custom.png',
