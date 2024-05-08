@@ -111,16 +111,8 @@ export const PROJECTS: {
         new LinkButton(
           '.NET',
           COMMON_COLORS['.NET'],
-          'www.google.com',
+          'github.com/dev-dominic-1/expert-app-api',
           'dot-net-custom.png',
-          true,
-          new Status(
-            'The Expert App (Web API)',
-            false,
-            CurrentProgress.NOT_STARTED,
-            CurrentProgress.NOT_STARTED,
-            CurrentProgress.NOT_STARTED,
-          )
         )
       ]
     ]
